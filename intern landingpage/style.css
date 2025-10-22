@@ -1,0 +1,278 @@
+/* RESET AND BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2ecc71;
+  padding: 20px 60px;
+  color: white;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* NAVIGATION */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #d1f5e0;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ACTIVE HAMBURGER ANIMATION */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.hero-text button {
+  background: #fff;
+  color: #2ecc71;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  background: #d1f5e0;
+}
+
+.hero img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* FEATURES SECTION */
+.features {
+  text-align: center;
+  padding: 70px 30px;
+  background: #fff;
+}
+
+.features h2 {
+  color: #27ae60;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.feature-box {
+  background: #ecf9f1;
+  padding: 25px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-box h3 {
+  margin-bottom: 10px;
+  color: #2ecc71;
+}
+
+/* SIGNUP SECTION */
+.signup {
+  text-align: center;
+  padding: 70px 30px;
+  background: #27ae60;
+  color: white;
+}
+
+.signup h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.signup p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.signup input {
+  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.signup button {
+  background: #fff;
+  color: #27ae60;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup button:hover {
+  background: #d1f5e0;
+}
+
+/* FOOTER */
+.footer {
+  background: #145a32;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #27ae60;
+    width: 100%;
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+  }
+
+  .nav.active {
+    height: 180px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .hero img {
+    margin-top: 25px;
+    width: 90%;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signup input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .features h2, .signup h2 {
+    font-size: 1.5rem;
+  }
+
+  .signup p {
+    font-size: 1rem;
+  }
+}
